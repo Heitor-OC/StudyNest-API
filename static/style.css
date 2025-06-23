@@ -108,7 +108,7 @@ header p {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('/static/logo.png');
+  background-image: url('/static/Logo.png');
   background-repeat: repeat;
   background-position: top left;
   background-size: 150px 150px; /* ajuste conforme o tamanho do logo */
@@ -183,6 +183,7 @@ t5y
   width: 40%;
   justify-content: center;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
 .cta a:hover {
