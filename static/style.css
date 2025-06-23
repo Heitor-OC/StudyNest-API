@@ -1,0 +1,260 @@
+/* Reset e box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Header com fundo animado */
+header {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(270deg, #40e0d0, #008080, #00ced1, #20b2aa);
+  background-size: 800% 800%;
+  animation: gradientShift 15s ease infinite;
+  width: 100vw;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+  overflow: hidden;
+  z-index: 1;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.header-content {
+  z-index: 2;
+}
+
+.logo {
+  height: 250px;
+  filter: drop-shadow(0 0 8px rgba(0,0,0,0.5));
+  max-width: 100%;
+}
+
+header h1 {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 8px rgba(0,0,0,0.7);
+}
+
+header p {
+  font-size: 1.8rem;
+  font-weight: 300;
+  text-shadow: 0 0 6px rgba(0,0,0,0.6);
+}
+
+/* Setinha scroll */
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  color: white;
+  opacity: 0.75;
+  cursor: pointer;
+  animation: bounce 2s infinite;
+  user-select: none;
+  z-index: 3;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(15px); }
+}
+
+.section {
+  position: relative; /* para que o background-pattern fique relativo aqui */
+  padding-top: 4rem;
+  max-width: 960px;
+  margin: 3rem auto 4rem auto;
+  background-color: #f0f4f8;
+  color: #333;
+  border-radius: 8px;
+  overflow: hidden; /* para o background não ultrapassar */
+}
+
+/* Background repetido com opacidade baixa */
+.background-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/static/logo.png');
+  background-repeat: repeat;
+  background-position: top left;
+  background-size: 150px 150px; /* ajuste conforme o tamanho do logo */
+  opacity: 0.05; /* deixa bem suave */
+  pointer-events: none; /* para não interferir em cliques */
+  z-index: 0;
+}
+
+/* Conteúdo deve ficar acima */
+.cards-container,
+.cta {
+  position: relative;
+  z-index: 1;
+}
+
+/* restante do seu CSS continua igual */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+t5y
+/* Cards individuais */
+.card {
+  background-color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
+}
+
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: #274060;
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin: 0;
+  color: #4a4a4a;
+  line-height: 1.4;
+  font-size: 1rem;
+}
+
+/* Botão CTA */
+.cta {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.cta a {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  background: linear-gradient(270deg, #40e0d0, #008080, #00ced1, #20b2aa);
+  background-size: 800% 800%;
+  animation: gradientShift 15s ease infinite;
+  box-shadow: 0 4px 15px rgba(64, 224, 208, 0.6);
+  transition: box-shadow 0.3s ease;
+  width: 40%;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.cta a:hover {
+  box-shadow: 0 6px 20px rgba(64, 224, 208, 0.9);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 900px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+
+  .cta a {
+    width: 70%;
+    font-size: 1.2rem;
+  }
+
+  header h1 {
+    font-size: 3rem;
+  }
+
+  header p {
+    font-size: 1.4rem;
+  }
+
+  .logo {
+    height: 180px;
+  }
+}
+
+@media (max-width: 400px) {
+  .cta a {
+    width: 90%;
+    font-size: 1rem;
+  }
+
+  header h1 {
+    font-size: 2.4rem;
+  }
+
+  header p {
+    font-size: 1.1rem;
+  }
+
+  .logo {
+    height: 140px;
+  }
+}
+.privacy-section {
+  text-align: center;
+  margin-top: 40px;
+}
+
+#showPrivacyBtn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+#showPrivacyBtn:hover {
+  background-color: #0056b3;
+}

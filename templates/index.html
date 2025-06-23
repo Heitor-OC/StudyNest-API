@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>StudyNest - Aprenda com Inteligência</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <img src="/static/logo.png" alt="Logo StudyNest" class="logo" />
+      <h1>StudyNest</h1>
+      <p>Seu novo jeito de estudar com flashcards inteligentes!</p>
+    </div>
+    <div class="scroll-down" id="scrollDown">
+      &#x25BC;
+    </div>
+  </header>
+    <div class="privacy-section">
+    <button id="showPrivacyBtn">🔒 Política de Privacidade</button>
+    <div id="privacyContent" style="display: none; white-space: pre-wrap; margin-top: 16px; padding: 12px; border: 1px solid #ccc; border-radius: 8px; background: #f9f9f9; max-height: 400px; overflow-y: auto;"></div>
+    </div>
+
+  <main class="section" id="mainContent">
+
+     <div class="background-pattern"></div>
+
+    <div class="cards-container">
+      <div class="card">
+        <h2>📚 Geração Automática de Flashcards via PDF</h2>
+        <p>Envie qualquer PDF de estudo e deixe nossa IA gerar os flashcards para você em segundos! Economize tempo e foque no que importa: aprender.</p>
+      </div>
+
+      <div class="card">
+        <h2>🎯 Estudo Personalizado com Gráficos de Desempenho</h2>
+        <p>Acompanhe sua evolução com gráficos dinâmicos que mostram seu progresso, pontos fortes e conteúdos que ainda precisam de reforço.</p>
+      </div>
+
+      <div class="card">
+        <h2>🧠 Crie, Edite e Organize seus Baralhos</h2>
+        <p>Tenha controle total sobre seus estudos. Crie baralhos personalizados, edite seus flashcards e exclua o que não for mais necessário.</p>
+      </div>
+
+      <div class="card">
+        <h2>🚀 Estude em Qualquer Lugar</h2>
+        <p>Rápido, intuitivo e disponível para todos os dispositivos. Perfeito para quem estuda para vestibulares, concursos, ENEM ou provas da faculdade.</p>
+      </div>
+    </div>
+
+    <div class="cta">
+      <a href="#">📲 Instale agora o StudyNest</a>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 StudyNest
+  </footer>
+
+  <script>
+    document.getElementById('scrollDown').addEventListener('click', () => {
+      document.getElementById('mainContent').scrollIntoView({ behavior: 'smooth' });
+    });
+
+
+  document.getElementById('scrollDown').addEventListener('click', () => {
+    document.getElementById('mainContent').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  const privacyText = `Política de Privacidade do StudyNest
+    Última Atualização: 25/03/2025
+    A sua privacidade é importante para nós. Esta Política de Privacidade explica como o StudyNest coleta, usa e protege as suas informações ao utilizar nosso aplicativo.
+
+    1. Coleta e Uso de Informações
+    O StudyNest é um aplicativo gratuito e coleta apenas os dados estritamente necessários para sua operação, incluindo:
+    - Dados pessoais: Nome, e-mail e informações sobre as motos cadastradas.
+    - Dados de manutenção: Registros de manutenção realizados e programados.
+    - Dados de interação: Preferências do usuário para recomendações de produtos e conexão com outros usuários.
+
+    Estes dados são utilizados exclusivamente para:
+    - Notificar sobre manutenções programadas das motos.
+    - Alertar sobre promoções de produtos relacionados.
+    - Sugerir conexões entre usuários com motos semelhantes para compartilhamento de melhores práticas.
+
+    2. Compartilhamento de Informações
+    O StudyNest não compartilha, vende ou cede seus dados pessoais a terceiros para fins comerciais. Os dados poderão ser utilizados apenas dentro do ambiente do aplicativo para fins operacionais.
+
+    3. Armazenamento e Segurança dos Dados
+    Adotamos medidas técnicas e organizacionais para proteger seus dados contra acessos não autorizados, perda ou alteração.
+
+    4. Exclusão de Dados
+    O usuário pode cancelar o uso do StudyNest a qualquer momento. Ao solicitar a exclusão da conta, todos os seus dados e registros de manutenção serão permanentemente removidos do sistema.
+
+    5. Restrição de Uso
+    O StudyNest é destinado exclusivamente a usuários no Brasil. O suporte e os serviços do aplicativo estão disponíveis apenas dentro do território brasileiro.
+
+    6. Contato
+    Caso tenha dúvidas sobre esta Política de Privacidade ou deseje solicitar a exclusão de seus dados, entre em contato pelo e-mail: [e-mail de suporte].
+
+    Ao utilizar o StudyNest, você concorda com os termos desta Política de Privacidade.`;
+
+    document.getElementById('showPrivacyBtn').addEventListener('click', () => {
+        const privacyDiv = document.getElementById('privacyContent');
+        privacyDiv.textContent = privacyText;
+        privacyDiv.style.display = privacyDiv.style.display === 'none' ? 'block' : 'none';
+    });
+
+
+  </script>
+
+</body>
+</html>
